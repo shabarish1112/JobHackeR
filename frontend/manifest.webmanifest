@@ -1,0 +1,13 @@
+{
+  "name": "JobHacker — Fake Offer Letter & Phishing Inspector",
+  "short_name": "JobHacker",
+  "description": "Inspect suspicious job offers, recruiter messages and job links.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "orientation": "portrait-primary",
+  "icons": [
+    {"src":"assets/favicon.png","sizes":"256x256","type":"image/png","purpose":"any maskable"}
+  ]
+}

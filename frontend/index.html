@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f7f8f6" id="theme-color">
+  <meta name="description" content="JobHacker — Fake Offer Letter & Phishing Inspector. Upload an offer letter or paste recruiter content for explainable fraud analysis.">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>JobHacker — Fake Offer Letter & Phishing Inspector</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#inspector">Skip to inspector</a>
+
+  <header class="topbar">
+    <a class="brand" href="#inspector" aria-label="JobHacker home">
+      <img class="brand-mark" src="assets/jobhacker-mark.png" alt="">
+      <span class="brand-copy">
+        <img class="brand-wordmark" src="assets/jobhacker-wordmark.png" alt="JobHacker">
+        <span class="brand-tagline">FAKE OFFER LETTER &amp; PHISHING INSPECTOR</span>
+      </span>
+    </a>
+    <div class="top-actions">
+      <span class="status"><i></i> INSPECTION READY</span>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+        <span class="theme-icon">☾</span><span class="theme-label">DARK</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="inspector" class="page" tabindex="-1">
+    <section class="hero">
+      <div class="eyebrow">RECRUITMENT FRAUD CHECK</div>
+      <h1>Before you accept,<br><span>inspect the offer.</span></h1>
+      <p>Upload the offer letter PDF. JobHacker extracts the details, checks suspicious signals, and builds an evidence trail so you can see <strong>what was found, where it came from, and why it matters.</strong></p>
+    </section>
+
+    <section class="workspace" aria-label="Offer inspection">
+      <div class="input-panel">
+        <div class="panel-heading">
+          <div><span class="step-label">01</span><h2>Upload the offer letter</h2></div>
+          <span class="quiet">PDF · MAX 12 MB</span>
+        </div>
+
+        <label class="dropzone" id="dropzone" for="pdf-file" tabindex="0">
+          <input id="pdf-file" type="file" accept="application/pdf,.pdf" hidden>
+          <span class="upload-icon" aria-hidden="true">↑</span>
+          <strong>Drop your offer letter PDF here</strong>
+          <span>or tap to choose your offer letter</span>
+          <span class="file-name" id="file-name" aria-live="polite"></span>
+        </label>
+
+        <div class="secondary-input">
+          <div class="secondary-label"><span>Alternative</span><b>Paste the message instead</b><small>Useful for email, WhatsApp or recruiter text.</small></div>
+          <div class="field full">
+            <label for="text">Offer / recruiter message</label>
+            <textarea id="text" placeholder="Paste the message or offer text here…"></textarea>
+          </div>
+        </div>
+
+        <details class="context-details">
+          <summary>Optional context <span>company name or website</span></summary>
+          <div class="context-fields">
+            <div class="field">
+              <label for="company">Company name</label>
+              <input id="company" autocomplete="organization" placeholder="e.g. Example Technologies">
+            </div>
+            <div class="field">
+              <label for="url">Company / job URL</label>
+              <input id="url" inputmode="url" autocomplete="url" placeholder="https://company.example/jobs/123">
+            </div>
+          </div>
+        </details>
+
+        <div class="actions">
+          <p><b>Evidence first.</b> We distinguish document facts from independent checks.</p>
+          <button class="button" id="inspect" type="button">ANALYSE OFFER <span>→</span></button>
+        </div>
+        <div id="error" role="alert" aria-live="assertive"></div>
+      </div>
+    </section>
+
+    <section class="trust-row" aria-label="What the analysis covers">
+      <div><span>01</span><b>Extract</b><small>Company, contacts, links, dates &amp; money</small></div>
+      <div><span>02</span><b>Detect</b><small>Fees, credential requests &amp; fraud language</small></div>
+      <div><span>03</span><b>Verify</b><small>Domain, TLS, registration &amp; public signals</small></div>
+      <div><span>04</span><b>Explain</b><small>Evidence trail and practical next steps</small></div>
+    </section>
+
+    <section id="result" class="result-area" aria-live="polite"></section>
+  </main>
+
+  <footer class="footer">
+    <span>JOBHACKER / 2.2</span>
+    <span>Evidence-led decision support · A risk score is not proof by itself.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
